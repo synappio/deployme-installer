@@ -8,9 +8,9 @@ import yaml
 import kajiki
 
 def main():
-    with open('deployme.yml', 'rb') as fp:
-        config = yaml.load(fp)
     with open(sys.argv[1]) as fp:
+        config = yaml.load(fp)
+    with open(sys.argv[2]) as fp:
         context = pickle.load(fp)
     loader = kajiki.FileLoader(
         base=os.getcwd(),
@@ -22,7 +22,7 @@ def main():
     for command in config['run']:
         os.system(command)
 
-def deploy_template(loader, context, template, target, mode):
+def deploy_template(loader, context, template, targeat, mode):
     print 'Deploy %s to %s with mode 0%o' % (template, target, mode)
     Template = loader.import_(template)
     with open(target, 'wb') as fp:
