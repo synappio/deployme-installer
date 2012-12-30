@@ -1,0 +1,12 @@
+*~
+*.swp
+*.pyc
+keys.yml
+package.box
+.vagrant
+.DS_store
+.DS_Store
+*.xls
+*.egg-info/*
+jazimba_rsa
+dist/*
