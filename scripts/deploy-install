@@ -28,6 +28,7 @@ def deploy_template(loader, context, template, target, mode):
     with open(target, 'wb') as fp:
         for part in Template(context):
             fp.write(part)
+    os.chmod(target, mode)
 
 
 if __name__ == '__main__':
