@@ -22,7 +22,7 @@ def main():
     for command in config['run']:
         os.system(command)
 
-def deploy_template(loader, context, template, targeat, mode):
+def deploy_template(loader, context, template, target, mode):
     print 'Deploy %s to %s with mode 0%o' % (template, target, mode)
     Template = loader.import_(template)
     with open(target, 'wb') as fp:
