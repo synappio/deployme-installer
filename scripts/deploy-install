@@ -19,8 +19,6 @@ def main():
         autoescape_text=False)
     for tpl in config['templates']:
         deploy_template(loader, context, **tpl)
-    for command in config['run']:
-        os.system(command)
 
 def deploy_template(loader, context, template, target, mode):
     print 'Deploy %s to %s with mode 0%o' % (template, target, mode)
