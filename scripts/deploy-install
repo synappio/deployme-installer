@@ -13,7 +13,7 @@ def main():
     with open(sys.argv[2]) as fp:
         context = pickle.load(fp)
     loader = kajiki.FileLoader(
-        base=os.getcwd(),
+        path=os.getcwd(),
         reload=False,
         force_mode='text',
         autoescape_text=False)
